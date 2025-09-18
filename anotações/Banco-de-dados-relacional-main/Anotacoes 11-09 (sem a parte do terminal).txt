@@ -1,0 +1,58 @@
+Propriedade de ACID (que vão cair na prova)
+
+
+<-\| Atomicidade |/-> Ou faz tudo ou faz nada, ou garante que da certo ou não realiza nada.
+Ex: Tu pede um bolo, ou tu entrega ele feito ou devolve do jeito que foi concedido.
+--Comandos--
+Commit (no BD) efetiva uma transação (vem ativado por padrão no mysql, executando automaticamente).
+
+|======================================================|
+
+<-\|Consistência |/-> Respeita todas as regras de restrições do banco de dado.
+Ex: Cardinalidade (uma restrição de integridade, forçando por exemplo um campo obrigatório a enviar um dado VÁLIDO (NOT NULL)).
+--Comandos--
+Nenhum que ele tenha falado (mas é possivel que tenha)
+
+|======================================================|
+
+<-\|Isolamento|/-> Uma transição não pode afetar a outra, garantindo que cada insert, update, e semelhantes trabalhem adequadamente.
+Ex: Duas pessoas salvando ao mesmo tempo, as informações que uma e a outra estão salvando não podem se misturar.
+--Comandos--
+Ele usou de exemplo os comandos de transição de dados (insert, update)
+
+|======================================================|
+
+<-\|Durabilidade|/-> Quando uma transição é confirmada (recebe o OK num commit), as alterações são permanentes, mesmo em caso de falha no sistema.
+Ex: Ele falou da obsolecência programada, mas não acho que tenha relação direta com a durabilidade
+--Comandos--
+Nenhum que ele tenha falado (além do commit citado ali, mas não acho que seja)
+
+|======================================================|
+
+
+Linguagens em SGBDs
+
+DDL (Data Definition Language)
+Define a estrutura do banco de dados
+Comandos:
+Create, Alter, Drop
+
+DML (Data Manipulation Language)
+Manipula os dados de um banco de dados
+Comandos:
+Insert, Update, Delete
+
+DQL (Data Query Language)
+Consulta dados
+Comando principal:
+Select (em sql)
+
+DCL (Data Control Language)
+Controla acesso (concede ou revoga permissão)
+Comandos:
+Grant, Revoke
+
+TCL (Transaction Control Language)
+Controla transações
+Comandos:
+Commit, Rollback, Savepoint

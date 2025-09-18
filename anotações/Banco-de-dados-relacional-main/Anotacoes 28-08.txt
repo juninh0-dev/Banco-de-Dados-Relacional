@@ -1,0 +1,62 @@
+Anotações banco de dados relacional 28/08
+
+-> Quando um caminho é formado, é possivel cortar relações.
+Ex: clientes -> contratos <- pagamentos
+Clientes também tem relação com os pagamentos, porém com o caminho já formado se torna descenessário criar mais essa relação.
+
+-> Quando o preço é variavel referente ao tempo, é possivel transformar o atributo da tabela em uma tabela.
+Produtos - preco_produto -> preco_produto vira uma tabela e engloba as possiveis variaveis como: "data inicial" de tal preço, e "data final".
+
+--> Recado hortolândia <--
+(Custa dindin (110,00R$, não acho que compense)
+Confirmar até segunda, o lugar parece legal
+Vão sair as 4:00 (sexta-feira) estimando chegar la por volta das 8:00, voltando por volta das 16:00
+
+
+
+<-----> Numeric Data Types <----->
+* INT (usado para INTeiros)
+* DECIMAL (engloba DECimais)
+
+Ex: DECIMAL (5,2)
+999,99
+5 -> quantas casas existem
+2 -> posição da virgula da direita para a esquerda
+
+Ex: DECIMAL (5,3)
+99,999
+
+Na prática é bom aumentar o limite em um. Se a pessoa por exemplo usa "1.000.000,00" (9,2), tu usa no decimal (10,2)
+
+
+
+<-----> String Data Types <----->
+* VAR CHAR() # O limite costuma ser 255, mas em certas versões do MDB pode ser 191
+^ Usado quando há possibilidade de VARiar a quantia
+
+* CHAR()
+^ Usado quando tem CERTEZA da quantidade a ser preenchida
+
+* TEXT
+^ Copia o tipo de formatação (como no word)
+
+Ex da diferença:
+VAR CHAR(6) Não gasta espaço vazio
+Numa fileira com 6 cadeiras, 4 ocupadas, então só 4 são consideradas. (realisticamente ele guarda um espaço extra como campo de controle, mas não costuma ser relevante)
+
+CHAR(6) Gasta espaço vazio
+Na mesma fileira, consideraria as livres também.
+
+//Obs -> Em caso onde é possivel a utilização de NÚMERO ou TEXTO, NÚMERO é melhor em quesito performance e TEXTO é melhor em quesito estética
+
+
+
+<-----> Outros tipos <----->
+Spatial Data Types -> Localização, bem complicadinho e não compensa utilizar (foi o que o Ronan disse)
+Json Data Type -> Armazena o "log" do sistema, util em caso de cagadas mas é pouco consultado.
+Date and Time Data Types -> Dentre os tipos, o timestamp é mais primitivo e engloba uma menor possibilidade de datas em relação ao date type.
+
+Há variações para certos tipos (como tiny int, medium int, e big int) que definem o limite de cada um
+Ex: tiny int vai de -126 até 127 (contando o 0)
+
+À partir de hoje a gente não vai mais usar int (na aula dele e no geral creio eu) pra chave primaria, vamos usar BIG INT, que é maior por não incluir o uso de negativos.
