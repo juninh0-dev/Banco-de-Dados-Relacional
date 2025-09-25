@@ -20,7 +20,7 @@ SHOW CREATE DATABASE aula_180925;
 USE aula_180925;
 
 -- Cria uma tabela que impede erro
-CREATE TABLE usuario(
+CREATE TABLE IF NOT EXISTS usuarios(
 	id_usuario BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     cpf VARCHAR(14) UNIQUE,
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS produtos_categorias(
 -- Dois registros iguais podem conter aqui
 
 	produto_id BIGINT UNSIGNED NOT NULL,
-	categorias_id BIGINT UNSIGNED NOT NULL,
+	categoria_id BIGINT UNSIGNED NOT NULL,
     -- CAMPOS PARA LOGS
     criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
     alterado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -108,4 +108,4 @@ CREATE TABLE IF NOT EXISTS produtos_categorias(
 ALTER TABLE aula_180925.produtos_categorias
 	-- Ao fazer ALTER TABLE é obrigatório informar o nome de Relacionamento
     ADD CONSTRAINT fk_produtos_categorias_categorias
-    FOREIGN KEY (categoria_id) REFERENCES categorias (id_categorias);
+    FOREIGN KEY (categoria_id) REFERENCES categorias (id_categoria);
