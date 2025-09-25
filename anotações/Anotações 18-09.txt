@@ -1,0 +1,25 @@
+O Ronan permite cola física pra prova, então vale a pena anotar numa folha depois os conceitos!!!
+
+SHOW DATABASES;
+
+-- Cria um banco de dados
+-- Com If deixa de ser erro e vira warning
+
+CREATE DATABASE IF NOT EXISTS diego;
+
+-- Deleta um banco de dados
+-- Todo Create & Drop aceitam a estrutura do IF
+
+DROP DATABASE IF EXISTS ronan;
+
+-- Cria um banco de dados completo!
+
+CREATE DATABASE IF NOT EXISTS aula_180925 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- Mostra o script de criação do banco completo, com o charset
+
+SHOW CREATE DATABASE aula_180925;
+
+-- Marca um banco de dados para ser utilizado até que a conexão finalize
+
+USE aula_180925;

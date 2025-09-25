@@ -1,0 +1,16 @@
+Um lanche de pão de queijo com nutella, em uma página igual ifood o lanche deveria aparecer em "lanches" e "doces", ou seja, teria que ser set e não enum. 
+Nesse caso, você estaria diante de um N:N
+
+*Lembrando que o set é exclusivo do sql, e diferente do enum ele permite selecionar mais de uma dentre as opções concedidas*
+ENUM ('lanches', 'bebidas', 'doces') -> Só pode ser um
+SET ('lanches', 'bebidas', 'doces') -> Pode escolher mais de um mas só funciona no sql, então é bom fazer N:N
+
+Revisão dia 09/10
+Possivel feriado dia 15/10
+Prova dia 16/10
+
+<-- Macete para caso não utilizar o USE -->
+É possivel navegar e forçar o uso de um database sem utilizar o "USE", utilizando syntax de navegação:
+EX: "ALTER TABLE aula_180925.produtos_categorias"
+Na situação o database "aula_180925" é convocado, e chamam de dentro dele um elemento diretamente, sem depender de use.
+Mencionar o database é uma boa prática sempre, mas não muito utilizada em comandos simples. Vale notar que vale para outros comandos além de ALTER.
